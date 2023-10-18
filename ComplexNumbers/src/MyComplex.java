@@ -1,11 +1,7 @@
 public class MyComplex {
 
-    private double real = 0.0;
-
-    private double imag = 0.0;
-
-    public MyComplex() {
-    }
+    private double real;
+    private double imag;
 
     public MyComplex(double real, double imag) {
         this.real = real;
@@ -77,10 +73,6 @@ public class MyComplex {
         return this;
     }
 
-    public MyComplex subtractNew(MyComplex right) {
-        return new MyComplex((real - right.real), (imag - right.imag));
-    }
-
     public MyComplex multiply(MyComplex right) {
         double a = real;
         double b = imag;
@@ -92,10 +84,6 @@ public class MyComplex {
         return this;
     }
 
-    public MyComplex multiplyNew(MyComplex right) {
-        return new MyComplex((real * right.real - imag * right.imag), (real * right.imag + imag * right.real));
-    }
-
     public MyComplex divide(MyComplex right) {
         double a = real;
         double b = imag;
@@ -105,20 +93,6 @@ public class MyComplex {
         this.real = (a * c + b * d) / (c * c + d * d);
         this.imag = (b * c - a * d) / (c * c + d * d);
 
-        return this;
-    }
-
-    public MyComplex divideNew(MyComplex right) {
-        double a = real;
-        double b = imag;
-        double c = right.real;
-        double d = right.imag;
-
-        return new MyComplex((a * c + b * d) / (c * c + d * d), (b * c - a * d) / (c * c + d * d));
-    }
-
-    public MyComplex conjugate() {
-        this.imag = imag * (-1);
         return this;
     }
 }

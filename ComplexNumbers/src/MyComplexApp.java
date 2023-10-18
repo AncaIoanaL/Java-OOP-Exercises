@@ -44,6 +44,6 @@ public class MyComplexApp {
             System.out.println(complex1 + "is NOT equal to " + complex2);
         }
 
-        System.out.println(complex1.toString() + complex2.toString() + " = " + complex1.addNew(complex2));
+        System.out.println(complex1 + "" + complex2 + " = " + complex1.addNew(complex2));
     }
 }
